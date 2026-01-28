@@ -448,3 +448,161 @@ A saída deste código será:
     12 18
     21
 ```
+
+# Capítulo 5 - Operadores e Expressões 
+
+Neste capítulo será retratado sobre a utilização de expressões e operados, os quais fazem parte de quase todos os códigos feitos em c++.
+
+## 5.1 - Expressões
+
+É uma sequência de operandos e operadores que especifica uma operação.
+
+- Exemplo
+
+```cpp
+    X = Y + 15
+```
+
+> Expressão: Y + 15;
+> Operador: +;
+> Operandos: Y e 15. 
+
+## 5.2 - Operadores
+
+### 5.2.1 - Definição
+
+O significado de um **operador** depende dos tipos de seus operandos: M + N.
+
+O operador + pode ser: 
+
+- Soma de inteiros
+- Soma de pontos flutuantes
+- Concatenação de strings
+- Soma de ponteiros 
+
+### 5.2.2 - Tipos de Operadores
+
+#### 5.2.2.1 - Aritméticos
+
+Dentre os tipos de operadores aritméticos temos:
+
+- Subtração 
+- Adição 
+- Multiplicação 
+- Divisão 
+- Resto da Divisão
+
+Sempre existe uma ordem de procência entre eles, na qual é a mesma em matemática.
+
+> Caso seja necessário que siga uma precedencia forçada, basta apenas utilizar os parênteses ().
+
+#### 5.2.2.2 - Operadores Lógicos e Relacionais 
+
+As expressões que usam operadores relacionais ou lógicos devolvem zero para "falso" e 1 para "verdadeiro" (true ou false). Dentre os tipos de operadores logicos e relacionais temos:
+
+- (>) - Maior que
+- (>=) - Maior ou igual que
+- (<) - Menor que 
+- (<=) - Menor ou igual que 
+- (==) - Igual
+- (!=) - Diferente
+- (&&) - AND
+- (||) - OR
+- (!) - NOT
+
+#### 5.2.2.3 - Operadores de Atribuição
+
+A fim de simplificar a maneira de atribuir valores à variáveis, pode ser utilizados diferentes tipos de operadores de atribuição, são eles: 
+
+![alt text](Anotações/Imagens/operadores_de_atribicao.png)
+
+### 5.2.3 - Procedência
+
+Todo operador possui uma precedência, na qual podemos vizualizar da seguinte maneira:
+
+- 1° Operadores Aritméticos (Seguindo a ordem da matemática)
+- 2° Operadores Lógicos e Relacionais.
+
+Dentro do conceito, temos a associatividade, na qual segue apartir da esquerda para a direita (L-R).
+
+#### 5.2.2.4 - Operadores de Deslocamento 
+
+Como todo programa que possua interação com uma máquina sempre terá numeros convertidos para binário, é possível utilizar operadores de deslocamento bínario para se fazer determinadas operações, exemplo:
+
+```cpp
+    X = 2;
+    X<<=1;
+    //Isso implica dizer que o número 2 (0010) será deslocado para a esquerda 1 bit, ficando igual a 4(0100).
+```
+
+Tipos de operadores de deslocamento:
+
+- (<<) - Irá mover os bits para a esquerda
+- (>>) - Irá mover os bits para a direita
+
+#### 5.2.2.5 - Operadores de Incremento e Decremento
+
+Os operadores de Incremento e Decremento podem auxiliar de maneira a simplificar o código e também em momentos que necessita de situações específicas, a seguir será mostrado os operadores:
+
+```cpp
+    ++X //Significa que o X = X + 1;
+    --X // Significa que o X = X - 1;
+``` 
+
+No entando existem difenrenças na utilização destes operadores, pois a maneira que se escreva ele, pode mudar a maneira de que seja atribuida a variável.
+
+```cpp
+#include <iostream>
+using namespace std;
+int main () {
+    int y, x = 3;
+    y = ++x; // x será 4, y será 4
+    cout << x << endl;
+    cout << y << endl;
+}
+```
+
+Diferente de: 
+
+```cpp
+#include <iostream>
+using namespace std;
+int main () {
+    int y, x = 3;
+    y = x++; // x será 4, y será 3
+    cout << x << endl;
+    cout << y << endl;
+}
+```
+
+#### 5.2.2.6 - Operadores de Manipulação Bit-a-Bit (bitwise)
+
+Quando se fala em operadores bit a bit, entende-se que as operações relacionadas aos números não ocorrerão de maneira simples, ou seja, o numero sera visto de maneira mais aprofundada, temos como operadores de manipulação bit-a-bit:
+
+- (&) - AND bit-a-bit
+- (|) - OR bit-a-bit
+- (^) - XOR bit-a-bit
+- (~) - INVERSOR bit-a-bit
+- (<<) - Deslocamento de bits à esquerda
+- (>>) - Deslocamento de bits à direita
+
+Pode ser utilizado a mesma sitaxe do verilog:
+
+```cpp
+    0b0000001 // isso é a mesma coisa que 1 em decimal.
+```
+
+#### 5.2.2.7 - Operador condicional ternário (Parecido com o IF)
+
+O operador condicional é bastante parecido com o IF, no entando ele necessita de apenas uma linhan para ser escrito (contém limitações).
+
+```cpp
+    y = (x<20) ? 50 : 70;
+    //Y = 50 se x<20 senão Y = 70.
+```
+
+### 5.2.4 - Classificação
+
+- Unário: Atuam sobre um operando: ```&P```
+- Binário: Atuam sobre dois operandos: ```X * Y```
+- Ternário: Atuam sobre três operandos: ```a?b:c```

@@ -13,7 +13,7 @@ int main(){
     float r,c1,c2;
 
 
-    while(parada!='S'){
+    while(parada!='S' | parada == ){
 
         //Pedindo para inserir o nome
         cout << "Escreva seu nome completo: ";
@@ -68,6 +68,12 @@ int main(){
         cout << "O perimetro do circulo: " << PI*2*r;
         //Área
         cout << "A area do circulo: " << PI*(pow(r,2));
+
+        //Mostrar o sin, cos e tan de 0 até 90 com passo de 5
+        for(cont=0;cont<=90;cont=cont+5){
+            cout << "O valor do sen de " << cont << "e: " << sin(cont);
+            cout << "O valor do cos de " << cont << "e: " << cos(cont);
+        }
     }
     return  0;
 }
