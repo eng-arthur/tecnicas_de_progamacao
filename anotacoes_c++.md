@@ -747,3 +747,50 @@ A estrutura switch-case é um pouco diferente da estrutura if, no entanto segue 
     }
 ```
 
+## 7.3 - Estrutura de Controle de Iteração
+
+### 7.3.1 - While
+
+A parte de estrutura de controle de iteração funciona como a execução repetitiva de bloco de códigos do programa.
+A forma básica de iteração é pela construção do **While/Do** ou **Do/While**. 
+
+- Sintaxe do While:
+
+```cpp
+    while(expressão){
+
+    }
+```
+- Sintaxe do Do-While:
+
+```cpp
+    do{
+
+    }while();
+```
+
+>Pode se criar uma estrutura de repetição "infinita" apenas inserindo **true** dentro da condição do while.
+
+Na estrutura de repetição é possivel fazer uso do mesmo comando visto anteriormente, o comando **break**, o qual encerra o bloco de código saindo assim da estrutura de repetição.
+
+Na estrutura de repetição também temos a adição de uma ferramenta muito útil durante o processo de programação, o código **continue**, este comando faz com que após ele, nada seja executado no bloco da estrutura de condição e acabe voltando para o inicio da estrutura de condição.
+
+### 7.3.2 - For
+
+A estrutura de repetição for é utilizada quando se deseja executar um bloco de código um número determinado de vezes.
+
+Ela é especialmente indicada para situações em que o início, a condição de parada e o incremento da repetição são conhecidos.
+
+O comando for reúne, em uma única linha, três elementos fundamentais:
+
+- Inicialização da variável de controle
+- Condição que determina a continuidade do laço
+- Incremento ou decremento da variável de controle;
+
+Exemplo: 
+
+```cpp
+    for(inicialização;condição_de_parada;incremento_ou_decremento){
+        
+    }
+```
