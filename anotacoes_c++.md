@@ -606,3 +606,48 @@ O operador condicional é bastante parecido com o IF, no entando ele necessita d
 - Unário: Atuam sobre um operando: ```&P```
 - Binário: Atuam sobre dois operandos: ```X * Y```
 - Ternário: Atuam sobre três operandos: ```a?b:c```
+
+# Capítulo 6 - Conversão de tipos
+
+## 6.1 - Conversões Implícitas
+
+São aquelas executadas automaticamente e tem como regra a promoção de tipos:
+
+- Tipo de precisão mais baixa --> Tipo de precisão mais alta.
+
+Exemplo:
+
+```cpp
+    float pi = 3.14 + 3;
+```
+O valor de 3 que é do tipo inteiro, é convertido para o tipo float, concluindo a conta e chegando a 6.14.
+
+No entanto, caso tenhamos definido que pi é do tipo int, a sequência tomorá um destino diferente do 1° exemplo.
+
+```cpp
+    int pi = 3.14 + 3;
+```
+O valor 3 será convertido para float, para que haja a soma do valor float (3.14) mais o valor de 3 convertido para float. No entando, logo após realizada a soma o valor deixa de ser decimal e é convertido para inteiro novamente, visto que o tipo de variável declarada no do código seria do tipo inteiro, obtendo-se como valor final 6.
+
+## 6.2 - Conversões Explícitas
+
+A conversão explícita ocorre quando o programador força a conversão de um tipo de dado para outro, informando isso diretamente no código.
+Em C++, esse processo é chamado de type casting.
+
+Ela é utilizada quando se deseja controlar exatamente como a conversão deve acontecer, evitando comportamentos inesperados.
+
+- Sintaxe
+
+```cpp
+    tipo_de_dado(expressão);
+    (tipo_de_dado) expressão;
+```
+
+- Exemplo
+
+```cpp
+    double a=3.27;
+    int b;
+    b = int (a); //casting de double para int
+    b = (int) a; //casting de double para int
+```
