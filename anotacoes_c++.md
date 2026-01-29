@@ -514,7 +514,7 @@ As expressões que usam operadores relacionais ou lógicos devolvem zero para "f
 
 A fim de simplificar a maneira de atribuir valores à variáveis, pode ser utilizados diferentes tipos de operadores de atribuição, são eles: 
 
-![alt text](Anotações/Imagens/operadores_de_atribicao.png)
+![alt text](Imagens/operadores_de_atribicao.png)
 
 ### 5.2.3 - Procedência
 
