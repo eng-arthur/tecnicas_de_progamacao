@@ -25,6 +25,9 @@ Nesta anotação será falado um pouco sobre C++.
 - [Capítulo 2 - Variáveis](#capítulo-2---variáveis)
 - [Capítulo 3 - Funções](#capítulo-3---funções)
 - [Capítulo 4 - Espaço de Nomes](#capítulo-4---espaço-de-nomes)
+- [Capítulo 5 - Operadores e Expressões](#capítulo-5---operadores-e-expressões)
+- [Capítulo 6 - Conversão de tipos](#capítulo-6---conversão-de-tipos)
+- [Capítulo 7 - Programação Estruturada](#capítulo-7---programação-estruturada)
 ---
 
 # Capítulo 1 - Criação de um Código
