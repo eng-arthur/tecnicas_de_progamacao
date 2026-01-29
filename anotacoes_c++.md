@@ -651,3 +651,99 @@ Ela é utilizada quando se deseja controlar exatamente como a conversão deve ac
     b = int (a); //casting de double para int
     b = (int) a; //casting de double para int
 ```
+
+# Capítulo 7 - Programação Estruturada 
+
+A base da programação estruturada é que um programa dever ser composto por **blocos de código**  (procedimentos) que se interligam através de três estruturas de controle:
+
+- Sequência 
+- Seleção
+- Iteração
+
+## 7.1 - Sequência 
+
+Passos de procedimento ordenados de um programa.
+
+- Exemplos 
+
+```text
+    "primeiro faça a Tarefa A e depois a Tarefa B"
+```
+
+Pode ser reprensentada em pseudocódigo ou em fluxograma.
+
+## 7.2 - Estrutura de Controle de Seleção
+
+A estrutura de controle de seleção é um mecanismo da programação que permite ao programa tomar decisões, escolhendo diferentes caminhos de execução de acordo com o resultado de uma condição lógica.
+
+Por meio dessa estrutura, o fluxo do programa deixa de ser sempre sequencial, possibilitando a execução de blocos distintos de código, conforme uma condição seja verdadeira ou falsa.
+
+Em C++, as principais estruturas de seleção são o if, if–else e o switch.
+
+### 7.2.1 - Comando IF-ELSE
+
+O comando de controle de seleção mais simples é o IF, onde o usuário irá fornecer a condição e logo após será executado o bloco de comandos, segue a sintaxe da estrutura:
+
+```cpp
+    if(expressão) comando;
+
+    //ou
+
+    if(expressão){
+        bloco de comandos;
+    }else{
+        bloco de comandos;
+    }
+```
+
+- Exemplo de um código utilizando a estrutura de condição IF.
+
+```cpp
+#include <iostream>
+using namespace std;
+int main(){
+    float nota;
+    cout << "Digite a nota do aluno" << endl;
+    cin >> nota;
+    if (nota >= 7)
+    cout << "Aprovado" << endl;
+    if (nota < 7)
+    cout << "Não aprovado" << endl;
+    if (nota > 4)
+    cout << "Final" << endl;
+    if (nota <= 4)
+    cout << "Reprovado" << endl;
+}
+return 0;
+```
+
+Durante a estruturação do if, pode se utilizar estruturas aninhadas, ou seja, você poderá escrever um if logo após outro, exemplo:
+
+```cpp
+if (x > 0)
+    cout << "x eh positivo";
+else if (x < 0)
+    cout << "x eh negativo";
+else
+    cout << "x eh 0";
+```
+
+### 7.2.2 - Comando Swith-case
+
+A estrutura switch-case é um pouco diferente da estrutura if, no entanto segue o mesmo propósito de construir uma estrutura de condição mas o case possui peculiaridades nas quais são bem aproveitadas, como na utilização para a criação de menus.
+
+- Sintaxe da estrtura switch-case:
+
+```cpp
+    switch(expressão_de_condição){
+        case constante1:
+            grupo_de_comandos_1;
+            break;
+        case constante2:
+            grupo_de_comandos_2;
+            break;
+        default:
+            grupo_de_comandos_padrões;
+    }
+```
+
