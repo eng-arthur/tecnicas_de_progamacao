@@ -32,7 +32,7 @@ int main(){
     b = int(a);
     for(c=6;c>=0;c--){
         o[c]=b%2;
-        b/=2;
+        b/=2;   
     }
     for(c=0;c<=6;c++){
         cout << o[c];

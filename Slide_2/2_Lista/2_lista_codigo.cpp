@@ -4,6 +4,14 @@
 using namespace std;
 #define PI 3.14
 
+char parada(char a){
+    if(a=='S' || a=='s'){
+        return 'S';
+    }else{
+        return 'F';
+    }
+    
+}
 
 int main(){
 
@@ -13,13 +21,11 @@ int main(){
     float r,c1,c2;
 
 
-    while(parada!='S' | parada == ){
-
         //Pedindo para inserir o nome
         cout << "Escreva seu nome completo: ";
         getline(cin,nome);
         cout << nome;
-        if(nome == "S"){break;}
+
 
         //Pedindo para inserir a idade
         cout << "\nDigite sua idade: ";
@@ -74,6 +80,5 @@ int main(){
             cout << "O valor do sen de " << cont << "e: " << sin(cont);
             cout << "O valor do cos de " << cont << "e: " << cos(cont);
         }
-    }
     return  0;
 }

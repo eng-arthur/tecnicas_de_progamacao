@@ -28,6 +28,7 @@ Nesta anotação será falado um pouco sobre C++.
 - [Capítulo 5 - Operadores e Expressões](#capítulo-5---operadores-e-expressões)
 - [Capítulo 6 - Conversão de tipos](#capítulo-6---conversão-de-tipos)
 - [Capítulo 7 - Programação Estruturada](#capítulo-7---programação-estruturada)
+- [Capítulo 8 - Programação Orientada Objeto](#capítulo-8---programação-orientada-objeto)
 ---
 
 # Capítulo 1 - Criação de um Código
@@ -795,5 +796,152 @@ Exemplo:
 ```cpp
     for(inicialização;condição_de_parada;incremento_ou_decremento){
         
+    }
+```
+
+# Capítulo 8 - Programação Orientada Objeto
+
+A programação orientada objeto é baseada na escrita de códigos em termos de objetos (coisa que compõe um dado sistema) tornando-se assim a programação mais próxima de como as coisas na vida real realmente são.
+
+POO mapeia o mundo real e os componentes de software (chamadas de objetos) utilizadas no projeto e que interagem entre si.
+
+O POO é baseada nos conceitos de: 
+
+- Classes: É uma estrutura de dados que contém atributos (dados) e propriedades (funções).
+
+- Objetos: É uma instancia de uma classe.
+
+- Encapsulamento: Fundamento de POO e permite que atributos e propriedades sejam protegidos de acessos diretos.
+
+- Herança: Permite que uma classe herde atributos de outras classes.
+
+- Polimorfismo: Permite que diferentes objetos respondam a um mesmo método (função) cada um à sua maneira.
+
+## 8.1 - Classes
+
+Uma classe é uma estrutura fundamental da programação orientada a objetos que permite modelar entidades do mundo real, organizando dados e comportamentos em um único elemento.
+
+- Exemplo de uma classe:
+
+```cpp
+    #include <iostream>
+    using namespace std;
+
+    class Aviao{
+    public:
+        int vel=0;
+        int velMax;
+        string tipo;
+        void ini(int tp); //Protótipo do metodo da função
+    private:
+
+    };
+
+    void Aviao::ini(int tp){ //1=Jato, 2=Monomotor, 3=Planador
+        if(tp==1){
+            this.velMax=800;
+            this.tipo="Jato";
+        }else if(tp==2){
+            this.velMax=350;
+            this.tipo="Monomotor";
+        }else if(tp==3){
+            this.velMax=180;
+            this.tipo="Planador";
+        }
+
+    }
+
+    int main(){
+
+        Aviao av1;
+
+        cout << av1.vel;
+
+        return 0;
+    }
+```
+
+Na contrução de classes existem duas maneiras diferentes (outras maneiras támbem servem, como vista no exemplo anterior) de criar funções, as construtoras e as destrutoras.
+
+- Exemplo de função construtora:
+
+```cpp
+    class Aviao{
+    public:
+        int vel=0;
+        int velMax;
+        string tipo;
+        Aviao(int tp); //Exemplo de funçaõ construtora
+    private:
+
+    };
+
+    Aviao::Aviao(int tp){
+        if(tp==1){
+            tipo="Jato"; //Nesta caso, pelo fato de estar usando uma função construtora não há a necessidade de usar o this. 
+            velMax=800;
+        }else if(tp==2){
+            tipo="Monomotor";
+            velMax=350;
+        }else if(tp==3){
+            tipo="Planador";
+            velMax=180;
+        }
+    }
+```
+
+Caso queiramos privar o usuário de realizar alterações de variáveis na classe, usamos o **private** , no entanto, para que usemos o private é necessário conhecer algumas ferramentas que auxiliam ler e escrever nas variáveis privadas.
+
+- Exemplo de utilização do get e set: 
+
+```cpp
+    class veiculo{
+    public:
+        int vel;
+        int tipo;
+        Veiculo(int tp);
+        int getVelMax();
+        void setVelMax(int vm);
+        bool getLigado();
+        void setLigado(int lg);
+    private:
+        string nome;
+        int velMax;
+        bool ligado;
+    };
+
+    bool Veiculo::getLigado(){
+        return ligado;
+    }
+
+    void Veiculo::setLigado(int lg){
+        if(lg==1){
+            ligado=true;
+        }else{
+            ligado=false;
+        }
+    }
+
+    int Veiculo::getVelMax(){
+        return velMax;
+    }
+
+    void Veiculo::setVelMax(int vm){
+        velMax=vm;
+    }
+    
+    Veiculo::Veiculo(int tp){
+        tipo=tp;
+        if(tipo==1){
+            nome = "Carro";
+            setVelMax(200);
+        }else if(tipo==2){
+            nome = "Aviao";
+            setVelMax(800);
+        }else if(tipo==3){
+            nome = "Navio";
+            setVelMax(120);
+        }
+
     }
 ```

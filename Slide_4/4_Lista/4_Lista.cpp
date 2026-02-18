@@ -48,7 +48,7 @@ int main(){
                 cout << "\nO valor do somatorio: " << y;
 
                 cout << "\nDeseja continuar ? ";
-                cin >> s;
+                cin >> s; 
                 if(s=="Sim") continue;
                 else break;
 
