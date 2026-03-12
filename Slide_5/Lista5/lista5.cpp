@@ -24,6 +24,7 @@ public:
     double getAltura();
     double getPeso();
     string getNome();
+    ~Pessoa();
 };
 
 Pessoa::Pessoa(){
@@ -151,6 +152,7 @@ int main(){
                 }
                 for(i=0;i<qtd;i++){
                     p[i].Cadastramento();
+                    p[i].Impressao();
                 }
 
                 if(Return()) break;
