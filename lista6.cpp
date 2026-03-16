@@ -7,12 +7,12 @@ private:
     float x, y, z;
 
 public:
-    void setX(float a) { x = a; }
-    void setY(float b) { y = b; }
-    void setZ(float c) { z = c; }
-    float getX() { return x; }
-    float getY() { return y; }
-    float getZ() { return z; }
+    void setX(float a) {x = a;}
+    void setY(float b) {y = b;}
+    void setZ(float c) {z = c;}
+    float getX() {return x;}
+    float getY() {return y;}
+    float getZ() {return z;}
 
     float magnitude() {
         return sqrt(x * x + y * y + z * z);
@@ -146,10 +146,10 @@ int main() {
 
     do {
         cout << "\n=== MENU PRINCIPAL ===" << endl;
-        cout << "I.   Inicializar vetores" << endl;
-        cout << "II.  Computar magnitudes" << endl;
-        cout << "III. Imprimir em ordem crescente" << endl;
-        cout << "IV.  Soma, subtracao e distancia entre vetores" << endl;
+        cout << "1.   Inicializar vetores" << endl;
+        cout << "2.  Computar magnitudes" << endl;
+        cout << "3. Imprimir em ordem crescente" << endl;
+        cout << "4.  Soma, subtracao e distancia entre vetores" << endl;
         cout << "0.   Sair" << endl;
         cout << "Escolha: "; cin >> opcao;
 
