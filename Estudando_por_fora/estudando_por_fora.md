@@ -113,5 +113,200 @@ Para criarmos uma matriz utilizando vetor, podemos escrever da seguinte maneira.
 
 # Capítulo 2 - Funções
 
+Existem diversos tipos de funções: **int**, **float**, **void**, **string**, **char**. Algumas destas funções podem retornar algo, mas tambem não podem retornar nada, como por exemplo a função void.
 
+- Exemplo de uma função:
 
+```cpp
+    void texto(){
+        cout << "Arthur Lindo";
+    }
+```
+- Exemplo de uma função num código:
+
+```cpp
+    #include <iostream>
+    using namespace std;
+
+    void texto(); //Protótipo de função
+
+    int main(){
+        texto();
+    }
+
+    void texto(){ //Função
+        cout << "\nArthur é Lindo";
+    }
+    return 0;
+```
+
+Note que houve a necessidade de implementar um prótotipo de função antes do int main, pois é de necessidade implementar para que o código funcione, ja que função foi escrita após o int main.
+
+- Exemplo de uma função que produz uma soma
+
+```cpp 
+    void soma(int n1, int n2){
+        cout << "A soma dos dois numeros e: " << n1+n2;
+    }
+```
+
+- Exemplo da função anterior num código completo:
+
+```cpp
+    #include <iostream>
+    using namespace std;
+
+    void soma(int n1, int n2);
+
+    int main(){
+        soma(3,2);
+    }
+
+    void soma(int n1, int n2){
+        cout << "A soma dos dois numeros: " << n1+n2;
+    }
+
+    return 0;
+```
+
+Caso queira retornar algo, não podemos utilizar o void, já que o mesmo não retorna nada, portanto teremos que escolher entre **int**, **float**, **char** e **string**.
+
+- Exemplo de um código que retorna um valor inteiro:
+
+```cpp
+    int soma(int n1, int n2){
+        return n1+n2;
+    }
+```
+
+- Exemplo da função num código completo:
+
+```cpp
+    #include <iostream>
+    using namespace std;
+
+    int soma(int n1, int n2);
+
+    int main(){
+
+        cout << "O valor da soma foi" << soma(15,23);
+
+        return 0;
+    }
+
+    int soma(int n1, int n2){
+        return n1+n2;
+    }
+```
+
+Fazendo uma alusão do que foi visto antes, será que seria possível usar uma função com vetor ??
+
+- Exemplo de um código que utiliza uma função para mostrar os numero guardados num vetor:
+
+```cpp
+    #include <iostream>
+    using namespace std;
+
+    void print(int n1[4]);
+
+    int main(){
+
+        int conjunto[4]= {1,2,3,4};
+
+        print(conjunto);
+
+        return 0;
+    }
+
+    void print(int n1[4]){
+        for(int i=0;i<4;i++){
+            cout << n1[i];
+        }
+    }
+```
+
+## 2.1 - Sobrecarga de Funções
+
+A sobrecarga de funções ocorre quando há a presença de uma mais de uma função com o mesmo nome, no entando, isto não fará o código dar erro, na verdade o código continuará de maneira normal.
+
+- Exmplode uma função sobrecarregada:
+
+```cpp
+    #include <iostream>
+    using namespace std;
+
+    void soma(int n1, int n2);
+
+    int main(){
+        soma(20,30);
+        soma();
+        return 0;
+    }
+
+    void soma(int n1, int n2){
+        int re;
+        re =n1+n2;
+        cout << "Soma de " << n1 << "com" << n2 << "=" << re << "\n";
+    }
+
+    void soma(){
+        int n1,n2,re;
+        n1=10;
+        n2=20;
+        re = n1+n2;
+        cout << "Soma de " << n1 << "com" << n2 << "=" << re << "\n";
+    }
+``` 
+
+## 2.2 - Omissão de argumentos e argumentos padrão
+
+Caso seja necessário omitir o argumento da função em algum momento, ou então deixar um valor default, pode ser utilizado a estratégia de argumentos padrão da seguinte maneira:
+
+- Exemplo de código usando argumento padrão:
+
+```cpp
+    #include <iostream>
+    #include <string>
+    using namespace std;
+
+    void impressao(string txt="default"); //valor "default" como padrão no protótipo da função
+
+    int main(){
+
+        imnpressao(); //aqui omitimos a entrada da função
+                      //no entando, caso eu adicione algo dentro, será exibido oque está demntro e não o valor default.
+
+        return 0;
+    }
+
+    void impressao(string txt){
+        cout << "\n" << txt;
+    }
+```
+
+## 2.3 - Funções Recursivas
+
+As funções recursivas é quando nós chamamos a mesma função dentro dela própria, realizando assim a recursividade.
+
+- Exemplo de uma função recursiva:
+
+```cpp
+    #include <iostream>
+    using namespace std;
+
+    void contador(int num,int cont=0);
+
+    int main(){
+
+        contador(20);
+
+        return 0;
+    }
+
+    void contador(int num, int cont){
+        cout << cont << "\n";
+        if(cont<num>){
+            contador(num,++cont); //chamando a função dentro da própria função.
+        }
+    }
+``` 
