@@ -310,3 +310,6 @@ As funções recursivas é quando nós chamamos a mesma função dentro dela pr�
         }
     }
 ``` 
+
+# Capítulo 3 - Listas
+
