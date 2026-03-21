@@ -111,6 +111,46 @@ Para criarmos uma matriz utilizando vetor, podemos escrever da seguinte maneira.
 | 4  | 5 |  6  | 7  |
 | 8  | 9 |  10  | 11  |
 
+# Capítulo 2 - Algoritimo de Ordenamento
+
+Os algoritimos de ordenamento são maneiras de ordenar dados, dentre os tipos de ordenamentos temos: **Algoritimo de bolha** e **Busca Sequêncial**.
+
+## 2.1 - Algoritimo de Bolha
+
+O algoritimo de bolha consiste no ordenamento
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Capítulo 2 - Funções
 
 Existem diversos tipos de funções: **int**, **float**, **void**, **string**, **char**. Algumas destas funções podem retornar algo, mas tambem não podem retornar nada, como por exemplo a função void.
