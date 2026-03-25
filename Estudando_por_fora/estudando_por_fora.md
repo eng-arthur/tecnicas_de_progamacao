@@ -714,3 +714,64 @@ Em alguns casos necessitamos de implementar classes com heranças de outras clas
 
 - Exemplo de herança de variáveis.
 
+```cpp
+    #include <iostream>
+    #include <string>
+    using namespace std;
+
+    class Veiculo{
+    public:
+        int vel;
+        int blind;
+        int rodas;
+        void setTipo(int tp);
+        void setArma(int vm);
+        void imp();
+    private:
+        int tipo;
+        int velMax;
+        bool arma;
+    };
+
+    void Veiculo::imp(){
+        cout << "Tipo veiculo: " << tipo << endl;
+        cout << "Velocidade Máxima: " << velMax << endl;
+        cout << "Quantidade de Rodas: " << rodas << endl;
+        cout << "Blindagem: " << blind << endl;
+        cout << "Armamento: " << arma << endl;
+    }
+
+    void Veiculo::setTipo(int tp){
+        tipo=tp;
+    }
+    void Veiculo::setVelMax(int vm){
+        velMax=vm;
+    }
+    void Veiculo::setArma(bool ar){
+        arma=ar;
+    }
+
+    class Moto:public Veiculo{
+    public:
+        Moto(); 
+    };
+
+    Moto::Moto(){
+        vel=0;
+        blind=0;
+        rodas=2;
+        setTipo(1);
+        setVelMax(120);
+        setArma(false);
+    }
+
+
+    int main(){
+
+        Moto v1.Moto(1);
+
+        v1.imp();
+
+        return 0;
+    }
+```
