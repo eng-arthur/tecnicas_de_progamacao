@@ -577,4 +577,140 @@ Na maior parte dos casos as classes são usadas em conjunto com funções, dito 
         av1.init(1);
         cout << "O modelo e: " << av1.modelo << " e a velocidade maxima: " << av1.velMax;
     }
+``` 
+
+Na programação orientada a objeto há uma possibilidade de implementação de um construtor, na qual o mesmo possui o mesmo nome da classe, desta maneira, sempre que a criação de um objeto a função construtora será chamada e iniciada.
+
+> **Obs:** Ao criarmos o protótipo da função não  há a necessidade de colocar o tipo da função que estamos criando, apenas colocamos o nome igual ao da classe.
+
+- Exemplo de um código que faz uso da função construtora.
+
+```cpp
+    #include <iostream>
+    #include <string>
+    using namespace std;
+
+    class Aviao{
+    public: 
+
+        int vel=0;
+        int velMax;
+        string tipo;
+        Aviao(int tp);
+        void imprimir();
+    };
+
+    Aviao::Aviao(int tp){
+        if(tp==1){
+            tipo = "Jato";
+            velMax=800;
+        }else if(tp == 2){
+            tipo = "Mono motor";
+            velMax=350;
+        }else if(tp == 3){
+            tipo = "Planador";
+            velMax=180;
+        }
+    }
+
+    void Aviao::imprimir(){
+    cout << "Tipo: " << tipo << endl;
+    cout << "Velocidade maxima: " << velMax << endl;
+    }
+
+    int main(){
+
+        Aviao av1(1);
+
+
+        av1.imprimir();
+
+        return 0;
+    }
 ```
+
+Desta forma que estamo trabalhando as variáveis acabam ficando sucetíveis a "trocas" de valores pelo usuário, oque não seria do agrado caso estivessemos falando de dados sigilosos. Por isso, é possivel implementar as variáveis private, que necessitam obrigatoriamente das funções **GET** e **SET**.
+
+A função GET nada mais é que uma função que usamos quando precisamos ler o valor armazenado de forma encapsulada (private).
+
+- Exemplo de utilizção da função get:
+
+```cpp
+    #include <iostream>
+    using namespace std;
+
+    class Veiculo{
+        private:
+            int velocidade=100; //Variável encapsulada
+        public:
+            int getVel(); //Protótipo da função que usamos para ler a variável privada.
+    };
+
+    int Veiculo::getVel(){
+        return velocidade; //Aqui nós pegamos o valor da variável encapsulada.
+    }
+
+    int main(){
+        Veiculo v1;
+
+        cout << v1.getVel();
+        return 0;
+    }
+```
+
+> Nas variáveis encapsuladas, podemos apenas trabalhar com elas caso estejamos dentro da classe, ou em uma função que pertença a classe, como visto no **getVel**.
+
+A função SET nada mais é que uma função que usamos quando queremos alterar um valor privado armazenado de maneira encapsulada.
+
+- Exemplo de uso de uma função SET:
+
+```cpp
+    #include <iostream>
+    #include <string>
+    using namespace std;
+
+    class Veiculo{
+    private:
+        string tipo;
+        int velMax;
+    public:
+        void setTipo();
+        void setvelMax();
+        int getvelMax();
+        string getTipo();
+    };
+
+    void Veiculo::setTipo(){
+        cout << "Digite o tipo do veiculo: ";
+        cin >> tipo;
+    }
+    void Veiculo::setvelMax(){
+        cout << "Digite a velocidade maxima do  veiculo: ";
+        cin >> velMax;
+    }
+    int Veiculo::getvelMax(){
+        return velMax;
+    }
+    string Veiculo::getTipo(){
+        return tipo;
+    }
+
+    int main(){
+        Veiculo v1;
+
+        v1.setTipo();
+        v1.setvelMax();
+
+        cout << v1.getTipo() << endl;
+        cout << v1.getvelMax() << endl;
+    }
+```
+
+> Nas variáveis encapsuladas, podemos apenas trabalhar com elas caso estejamos dentro da classe, ou em uma função que pertença a classe, como visto no **setvelMax**.
+
+## 5.1 - Herança
+
+Em alguns casos necessitamos de implementar classes com heranças de outras classes diminuindo assim a quantidade de vezes que temos que escrever as mesmas variáveis para ambas.
+
+- Exemplo de herança de variáveis.
+
